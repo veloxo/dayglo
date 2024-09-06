@@ -117,6 +117,6 @@ setInterval(updatePositionSunTimes, 1 * 60 * 60 * 1000); // 1 hour
 
 if ("serviceWorker" in navigator) {
     window.onload = () => {
-        navigator.serviceWorker.register("/sw.js");
+        navigator.serviceWorker.register("sw.js");
     };
 }
