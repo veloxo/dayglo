@@ -3,7 +3,8 @@
     "short_name": "Dayglo",
     "theme_color": "#542437",
     "background_color": "#542437",
-    "display": "minimal-ui",
+    "display": "standalone",
+    "scope": "/dayglo/",
     "start_url": "/dayglo/index.html",
     "icons": [
         {
