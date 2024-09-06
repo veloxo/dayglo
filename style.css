@@ -51,7 +51,7 @@ h1 {
 .hour-bar {
     flex-grow: 1;
     background-color: #0003;
-    margin: 2px 0;
+    margin: calc(4% / 25) 0;
     border-radius: 60vh / 100vh;
     overflow: hidden;
     position: relative;
