@@ -1,11 +1,11 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
         caches.open('dayglo-store').then((cache) => cache.addAll([
-            '/',
-            '/index.html',
-            '/style.css',
-            '/index.js',
-            '/suncalc.js',
+            '/dayglo/',
+            '/dayglo/index.html',
+            '/dayglo/style.css',
+            '/dayglo/index.js',
+            '/dayglo/suncalc.js',
         ])),
     );
 });

@@ -4,7 +4,7 @@
     "theme_color": "#542437",
     "background_color": "#542437",
     "display": "minimal-ui",
-    "start_url": "/index.html",
+    "start_url": "/dayglo/index.html",
     "icons": [
         {
             "src": "apple-touch-icon.png",
