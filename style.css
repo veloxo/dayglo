@@ -1,3 +1,6 @@
+html {
+    overscroll-behavior: none;
+}
 body {
     font-family: Avenir, -apple-system, Futura, sans-serif;
     font-variant: small-caps;
