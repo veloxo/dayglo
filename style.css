@@ -13,10 +13,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-top: 0.1px;
-    padding-bottom: 24px;
     box-sizing: border-box;
     width: 90%;
+}
+.footer {
+    padding-bottom: 24px;
+    zoom: reset;
 }
 h1 {
     text-align: center;
@@ -51,7 +53,7 @@ h1 {
 .hour-bar {
     flex-grow: 1;
     background-color: #0003;
-    margin: calc(4% / 25) 0;
+    margin: calc(4vh / 24) 0;
     border-radius: 60vh / 100vh;
     overflow: hidden;
     position: relative;
@@ -71,10 +73,10 @@ h1 {
     mix-blend-mode: difference;
 }
 .hour-label-left {
-    left: 0.8rem;
+    left: 1.2vh;
 }
 .hour-label-right {
-    right: 0.8rem;
+    right: 1.2vh;
 }
 
 .hour-bar-dayshift {
