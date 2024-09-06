@@ -2,7 +2,7 @@ let fallbackPosition = { coords: { latitude: 47.6, longitude: -122.5 } }; // Sea
 
 function createHourBars() {
     const container = document.getElementById("progress-bar-container");
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 3; i++) {
         const hourBar = document.createElement("div");
         hourBar.className = "hour-bar";
         hourBar.id = `hour-bar-${i}`;
@@ -27,16 +27,18 @@ function updateProgress() {
     const currentMinute = now.getMinutes();
     const currentSecond = now.getSeconds();
 
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 3; i++) {
         const progressBar = document.getElementById(`progress-bar-${i}`);
-        if (i < currentHour) {
-            progressBar.style.width = "100%";
-        } else if (i === currentHour) {
-            const percentElapsed = ((currentMinute * 60 + currentSecond) / 3600) * 100;
-            progressBar.style.width = percentElapsed + "%";
-        } else {
-            progressBar.style.width = "0%";
-        }
+        progressBar.style.width = "100%";
+
+        // if (i < currentHour) {
+        //     progressBar.style.width = "100%";
+        // } else if (i === currentHour) {
+        //     const percentElapsed = ((currentMinute * 60 + currentSecond) / 3600) * 100;
+        //     progressBar.style.width = percentElapsed + "%";
+        // } else {
+        //     progressBar.style.width = "0%";
+        // }
     }
 }
 
@@ -69,13 +71,13 @@ function colorSunTimes(position) {
         const hourBar = document.getElementById(`hour-bar-${i}`);
         const progressBar = document.getElementById(`progress-bar-${i}`);
 
-        if (i === sunriseHour) {
+        if (i === 1) {
             hourBar.classList.add("hour-bar-dayshift");
             progressBar.classList.add("progress-bar-dayshift");
-        } else if (i === sunsetHour) {
-            hourBar.classList.add("hour-bar-nightshift");
-            progressBar.classList.add("progress-bar-nightshift");
-        } else if (sunriseHour < i && i < sunsetHour) {
+        // } else if (i === 1) {
+        //     hourBar.classList.add("hour-bar-nightshift");
+        //     progressBar.classList.add("progress-bar-nightshift");
+        } else if (i === 2) {
             hourBar.classList.add("hour-bar-daylight");
             progressBar.classList.add("progress-bar-daylight");
         } else {
