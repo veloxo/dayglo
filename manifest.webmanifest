@@ -1,0 +1,15 @@
+{
+    "name": "Dayglo",
+    "short_name": "Dayglo",
+    "theme_color": "#542437",
+    "background_color": "#542437",
+    "display": "minimal-ui",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "1024x1024",
+            "purpose": "maskable"
+        }
+    ]
+}

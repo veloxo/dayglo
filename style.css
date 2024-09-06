@@ -1,0 +1,98 @@
+body {
+    font-family: Avenir, -apple-system, Futura, sans-serif;
+    font-variant: small-caps;
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #542437;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 0.1px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+    width: 90%;
+}
+h1 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.line {
+    background-color: #54243766;
+    position: absolute;
+    width: 0.5px;
+    height: 100%;
+    z-index: 1;
+}
+.line-1 {
+    left: 25%;
+}
+.line-2 {
+    left: 50%;
+}
+.line-3 {
+    left: 75%;
+}
+
+.hour-bar {
+    flex-grow: 1;
+    background-color: #0003;
+    margin: 2px 0;
+    border-radius: 60vh / 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.progress-bar {
+    height: 100%;
+    background-color: #83AF9B;
+}
+
+.hour-label {
+    position: absolute;
+    z-index: 2;
+    font-size: 0.8rem;
+    color: #fffe;
+    mix-blend-mode: difference;
+}
+.hour-label-left {
+    left: 0.8rem;
+}
+.hour-label-right {
+    right: 0.8rem;
+}
+
+.hour-bar-dayshift {
+    background: linear-gradient(#0003 -120%, #6663 80%);
+}
+.hour-bar-daylight {
+    background-color: #8883;
+}
+.hour-bar-nightshift {
+    background: linear-gradient(#6663 20%, #0003 220%);
+}
+
+.progress-bar-dayshift {
+    background: linear-gradient(in oklch, #83AF9B -120%, #C8C8A9 80%);
+}
+.progress-bar-daylight {
+    background-color: #F9CDAD;
+}
+.progress-bar-nightshift {
+    background: linear-gradient(in oklch, #C8C8A9 20%, #83AF9B 220%);
+}
