@@ -34,11 +34,12 @@ h1 {
 }
 
 .line {
-    background-color: #54243766;
+    background-color: #54243711;
     position: absolute;
-    width: 0.5px;
+    width: 3px;
     height: 100%;
     z-index: 1;
+    zoom: reset;
 }
 .line-1 {
     left: 25%;
