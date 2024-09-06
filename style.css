@@ -46,13 +46,13 @@ h1 {
     zoom: reset;
 }
 .line-1 {
-    left: 25%;
+    left: calc(25% - 1.5px);
 }
 .line-2 {
-    left: 50%;
+    left: calc(50% - 1.5px);
 }
 .line-3 {
-    left: 75%;
+    left: calc(75% - 1.5px);
 }
 
 .hour-bar {
