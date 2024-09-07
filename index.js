@@ -3,11 +3,13 @@ let fallbackPosition = { coords: { latitude: 47.6, longitude: -122.5 } }; // Sea
 function createHourBars() {
     const container = document.getElementById("progress-bar-container");
     for (let i = 0; i < 24; i++) {
-        const hourBar = document.createElement("div");
+        const hourBar = document.createElement("label");
         hourBar.className = "hour-bar";
         hourBar.id = `hour-bar-${i}`;
         hourBar.innerHTML = `
             <div class="progress-bar" id="progress-bar-${i}"></div>
+            <input type="checkbox" class="toggle" id="checkbox-${i}">
+            <div class="highlight"></div>
             <span class="hour-label hour-label-left">${convertTo12HourFormat(i)}</span>
             <span class="hour-label hour-label-right">${i.toString().padStart(2, "0")}</span>
         `;
@@ -22,6 +24,7 @@ function convertTo12HourFormat(hour) {
 }
 
 function updateProgress() {
+    // const now = new Date('2020-01-01T13:45:00');
     const now = new Date();
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
@@ -107,8 +110,33 @@ function handlePositionError(error) {
     colorSunTimes(fallbackPosition);
 }
 
+function highlightOnMousedown() {
+    const labels = document.querySelectorAll("label");
+
+    labels.forEach((label) => {
+        var checkbox = label.querySelector("input[type='checkbox']");
+        
+        label.addEventListener('touchstart', (event) => {
+            checkbox.checked = !checkbox.checked;
+        });
+        label.addEventListener('touchend', (event) => {
+            event.preventDefault();
+        });
+
+        label.addEventListener('mousedown', (event) => {
+            if (event.button === 0) { // left-click
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+        label.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+    });
+}
+
 createHourBars();
 updateProgress();
+highlightOnMousedown();
 colorSunTimes(fallbackPosition);
 updatePositionSunTimes();
 
