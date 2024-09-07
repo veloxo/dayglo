@@ -1,3 +1,8 @@
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 html {
     overscroll-behavior: none;
 }
@@ -44,6 +49,7 @@ h1 {
     height: 100%;
     z-index: 1;
     zoom: reset;
+    pointer-events: none;
 }
 .line-1 {
     left: 25%;
@@ -56,13 +62,13 @@ h1 {
 }
 
 .hour-bar {
+    display: flex;
     flex-grow: 1;
     background-color: #0003;
     margin: calc(4vh / 24) 0;
     border-radius: 60vh / 100vh;
     overflow: hidden;
     position: relative;
-    display: flex;
     align-items: center;
 }
 .progress-bar {
@@ -72,10 +78,10 @@ h1 {
 
 .hour-label {
     position: absolute;
-    z-index: 2;
     font-size: 0.8rem;
     color: #fffe;
     mix-blend-mode: difference;
+    z-index: 20;
 }
 .hour-label-left {
     left: 1.2vh;
@@ -95,11 +101,33 @@ h1 {
 }
 
 .progress-bar-dayshift {
-    background: linear-gradient(in oklch, #83AF9B -120%, #C8C8A9 80%);
+    background: linear-gradient(#83AF9B -120%, #C8C8A9 80%);
 }
 .progress-bar-daylight {
     background-color: #F9CDAD;
 }
 .progress-bar-nightshift {
-    background: linear-gradient(in oklch, #C8C8A9 20%, #83AF9B 220%);
+    background: linear-gradient(#C8C8A9 20%, #83AF9B 220%);
+}
+
+.highlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #00f33;
+    filter: blur(0.4vh);
+    z-index: 10;
+}
+label {
+    cursor: pointer;
+}
+.toggle {
+    display: none;
+}
+.toggle:checked + .highlight {
+    background-color: #f344;
+    mix-blend-mode: plus-lighter;
+}
+.toggle:not(:checked) + .highlight {
+    transition: 0.15s ease-out;
 }
