@@ -114,13 +114,6 @@ function highlightOnMousedown() {
     const labels = document.querySelectorAll("label.hour-bar");
 
     labels.forEach((label) => {
-        
-        label.addEventListener('touchstart', (event) => {
-            checkbox.checked = !checkbox.checked;
-        });
-        label.addEventListener('touchend', (event) => {
-            event.preventDefault();
-        });
         let checkbox = label.querySelector("input[type='checkbox']");
 
         label.addEventListener('mousedown', (event) => {
