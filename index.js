@@ -8,7 +8,7 @@ function createHourBars() {
         hourBar.id = `hour-bar-${i}`;
         hourBar.innerHTML = `
             <div class="progress-bar" id="progress-bar-${i}"></div>
-            <input type="checkbox" class="toggle" id="checkbox-${i}">
+            <input type="checkbox" class="toggle">
             <div class="highlight"></div>
             <span class="hour-label hour-label-left">${convertTo12HourFormat(i)}</span>
             <span class="hour-label hour-label-right">${i.toString().padStart(2, "0")}</span>
@@ -111,10 +111,9 @@ function handlePositionError(error) {
 }
 
 function highlightOnMousedown() {
-    const labels = document.querySelectorAll("label");
+    const labels = document.querySelectorAll("label.hour-bar");
 
     labels.forEach((label) => {
-        var checkbox = label.querySelector("input[type='checkbox']");
         
         label.addEventListener('touchstart', (event) => {
             checkbox.checked = !checkbox.checked;
@@ -122,6 +121,7 @@ function highlightOnMousedown() {
         label.addEventListener('touchend', (event) => {
             event.preventDefault();
         });
+        let checkbox = label.querySelector("input[type='checkbox']");
 
         label.addEventListener('mousedown', (event) => {
             if (event.button === 0) { // left-click
